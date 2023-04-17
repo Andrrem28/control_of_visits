@@ -40,7 +40,7 @@
                         <td>{{ $unit->city }}</td>
                         <td>{{ $unit->state }}</td>
                         <td>{{ $unit->zip_code }}</td>
-                       <td>{{ $unit->institution->name }}</td>
+                        <td>{{ $unit->institution->name }}</td>
                         <td class="">
                             <a href="{{ route('admin.units.edit', $unit->id) }}" class="btn btn-primary btn-sm"> <i class="fa fa-pen"></i> </a>
                             <!-- Button trigger modal -->
@@ -57,7 +57,7 @@
                               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
                             <div class="modal-body">
-                                <p>Deseja deletar a Instituição</p>
+                                <p>Deseja deletar a Unidade</p>
                             </div>
                             <div class="modal-footer">
                               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"> <i class="fa fa-times"></i> Não</button>
