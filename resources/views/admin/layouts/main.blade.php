@@ -165,8 +165,8 @@
       </li><!-- End Forms Nav -->
 
       <li class="nav-item">
-        <a class="nav-link collapsed"  href="#">
-          <i class="fa fa-house"></i><span>Tables</span></i>
+        <a class="nav-link collapsed"  href="{{ route('admin.units.index') }}">
+          <i class="fa fa-house"></i><span>Unidades</span></i>
         </a>
       </li><!-- End Tables Nav -->
 

@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\Admin\{InstitutionController, DashboardController};
+use App\Http\Controllers\Admin\{InstitutionController, DashboardController, UnitController};
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,5 +20,6 @@ Route::get('/', function () {
 
 Route::prefix('admin')->name('admin.')->group(function () {
     Route::resource('institutions', InstitutionController::class);
+    Route::resource('units', UnitController::class);
     Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
 });
