@@ -153,31 +153,31 @@
       </li><!-- End Dashboard Nav -->
 
       <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
+        <a class="nav-link collapsed"  href="#">
           <i class="fa fa-users"></i><span>Funcionários</span></i>
         </a>
       </li><!-- End Components Nav -->
 
       <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="#">
+        <a class="nav-link collapsed"  href="{{ route('admin.institutions.index') }}">
           <i class="fa fa-building"></i><span>Instituições</span></i>
         </a>
       </li><!-- End Forms Nav -->
 
       <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#tables-nav" data-bs-toggle="collapse" href="#">
+        <a class="nav-link collapsed"  href="#">
           <i class="fa fa-house"></i><span>Tables</span></i>
         </a>
       </li><!-- End Tables Nav -->
 
       <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#charts-nav" data-bs-toggle="collapse" href="#">
+        <a class="nav-link collapsed"  href="#">
           <i class="fa fa-door-open"></i><span>Setores</span></i>
         </a>
       </li><!-- End Charts Nav -->
 
       <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#icons-nav" data-bs-toggle="collapse" href="#">
+        <a class="nav-link collapsed"  href="#">
           <i class="fa fa-eye"></i><span>Visitas</span></i>
         </a>
       </li><!-- End Icons Nav -->
@@ -186,15 +186,7 @@
   </aside><!-- End Sidebar-->
 
   <main id="main" class="main">
-    <div class="pagetitle">
-      <h1>Dashboard</h1>
-      <nav>
-        <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-          <li class="breadcrumb-item active">Dashboard</li>
-        </ol>
-      </nav>
-    </div><!-- End Page Title -->
+    <!-- End Page Title -->
 
     @yield('content')
 
@@ -226,9 +218,9 @@
   <script src="{{ asset('NiceAdmin/assets/vendor/tinymce/tinymce.min.js') }}"></script>
   <script src="{{ asset('NiceAdmin/assets/vendor/php-email-form/validate.js') }}"></script>
 
+
   <!-- Template Main JS File -->
   <script src="{{ asset('NiceAdmin/assets/js/main.js') }}"></script>
-
 </body>
 
 </html>

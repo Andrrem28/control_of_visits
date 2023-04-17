@@ -1,7 +1,6 @@
 <?php
 
-use App\Http\Controllers\Admin\DashboardController;
-use App\Http\Controllers\Admin\InstitutionController;
+use App\Http\Controllers\Admin\{InstitutionController, DashboardController};
 use Illuminate\Support\Facades\Route;
 
 /*
