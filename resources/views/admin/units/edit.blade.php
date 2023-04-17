@@ -20,8 +20,9 @@
                 </div>
                 <div class="card-body">
                     <!-- General Form Elements -->
-                    <form action="{{ route('admin.units.store') }}" method="post">
+                    <form action="{{ route('admin.units.update', $unit->id) }}" method="post">
                         @csrf
+                        @method('patch')
                         <div class="col-md-6">
                             <label for="inputText" class="col-sm-2 col-form-label">Nome</label>
                             <input type="text" class="form-control" name="name" value="{{ $unit->name }}">

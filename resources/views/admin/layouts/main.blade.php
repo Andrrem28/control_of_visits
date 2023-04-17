@@ -171,7 +171,7 @@
       </li><!-- End Tables Nav -->
 
       <li class="nav-item">
-        <a class="nav-link collapsed"  href="#">
+        <a class="nav-link collapsed"  href="{{ route('admin.sectors.index') }}">
           <i class="fa fa-door-open"></i><span>Setores</span></i>
         </a>
       </li><!-- End Charts Nav -->
