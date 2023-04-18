@@ -11,13 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('sectors', function (Blueprint $table) {
-            $table->uuid('id');
-            $table->foreignUuid('user_id');
-            $table->foreignUuid('unit_id');
-            $table->string('name');
-            $table->timestamps();
-            $table->softDeletes();
+        Schema::table('roles', function (Blueprint $table) {
+            $table->string('description')->nullable();
         });
     }
 
@@ -26,6 +21,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('sectors');
+        Schema::table('roles', function (Blueprint $table) {
+            $table->string('description')->nullable();
+        });
     }
 };

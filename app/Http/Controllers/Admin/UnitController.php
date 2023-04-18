@@ -3,12 +3,10 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Admin\Unit\UnitStoreRequest;
-use App\Http\Requests\Admin\Unit\UnitUpdateRequest;
+use App\Http\Requests\Admin\Unit\{UnitStoreRequest, UnitUpdateRequest};
 use App\Models\Institution;
 use App\Models\Unit;
 use Exception;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
 class UnitController extends Controller

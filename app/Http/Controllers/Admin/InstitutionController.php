@@ -3,8 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Admin\Institution\InstitutionStoreRequest;
-use App\Http\Requests\Admin\Institution\InstitutionUpdateRequest;
+use App\Http\Requests\Admin\Institution\{InstitutionStoreRequest, InstitutionUpdateRequest};
 use App\Models\Institution;
 use Exception;
 use Illuminate\Support\Facades\DB;
