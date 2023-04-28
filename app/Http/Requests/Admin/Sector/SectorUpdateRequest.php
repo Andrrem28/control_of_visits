@@ -23,7 +23,8 @@ class SectorUpdateRequest extends FormRequest
     {
         return [
             'name' => 'required',
-            'unit_id' => 'required|max:255'
+            'unit_id' => 'required|max:255',
+            'user_id' => 'required'
         ];
     }
 }

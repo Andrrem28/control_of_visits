@@ -26,6 +26,18 @@
                         <div class="col-md-6">
                             <label for="inputText" class="col-sm-2 col-form-label">Nome</label>
                             <input type="text" class="form-control" name="name" value="{{ $sector->name }}">
+                            @error('name')
+                                <div class="alert alert-danger mt-2">{{ $message }}</div>
+                            @enderror
+                        </div>
+                        <div class="col-md-6">
+                            <label for="inputText" class="col-form-label">Funcionários deste setor</label>
+                            <select class="form-select" aria-label="Default select example" name="user_id">
+                                <option selected>Selecione...</option>
+                                @foreach ($users as $user)
+                                    <option value="{{ $user->id }}">{{ $user->name }}</option>
+                                @endforeach
+                            </select>
                         </div>
                         <div class="col-md-6">
                             <label for="inputText" class="col-form-label">Instituição pertencente</label>

@@ -11,7 +11,7 @@
 
   <!-- Notify Package -->
   @notifyCss
- 
+
   <!-- Favicons -->
   <link href="{{ asset('NiceAdmin/assets/img/favicon.png') }}" rel="icon">
   <link href="{{ asset('NiceAdmin/assets/img/apple-touch-icon.png')}}" rel="apple-touch-icon">
@@ -31,6 +31,7 @@
 
   <!-- Template Main CSS File -->
   <link href="{{ asset('NiceAdmin/assets/css/style.css')}}" rel="stylesheet">
+
   <!-- Fontwaserome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
@@ -199,6 +200,17 @@
   <script src="{{ asset('NiceAdmin/assets/vendor/simple-datatables/simple-datatables.js')}}"></script>
   <script src="{{ asset('NiceAdmin/assets/vendor/tinymce/tinymce.min.js') }}"></script>
   <script src="{{ asset('NiceAdmin/assets/vendor/php-email-form/validate.js') }}"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+  <!-- InputMask Section -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/3.3.4/jquery.inputmask.bundle.min.js"></script>
+  <script>
+    $(document).ready(function(){
+        $('.cep').inputmask('99.999-99');
+    });
+  </script>
+
 
   <!-- Notify Package -->
   @notifyJs

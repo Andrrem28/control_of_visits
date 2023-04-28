@@ -86,7 +86,7 @@
                         </div>
                         <div class="col-md-6">
                             <label for="inputText" class="col-sm-2 col-form-label">CEP</label>
-                            <input type="text" class="form-control cep"  name="zip_code" >
+                            <input type="text" class="form-control cep"  id="cep" name="zip_code" >
                             @error('zip_code')
                                 <div class="alert alert-danger mt-2">{{ $message }}</div>
                             @enderror
@@ -100,4 +100,9 @@
             </div>
         </div>
     </section>
+@endsection
+
+@section('js')
+@parent
+
 @endsection

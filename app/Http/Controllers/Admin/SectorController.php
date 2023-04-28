@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\Sector\{SectorStoreRequest, SectorUpdateRequest};
 use App\Models\Sector;
 use App\Models\Unit;
+use App\Models\User;
 use Exception;
 use Illuminate\Support\Facades\DB;
 
@@ -21,7 +22,8 @@ class SectorController extends Controller
     public function create()
     {
         return view('admin.sectors.create', [
-            'units' => Unit::all()
+            'units' => Unit::all(),
+            'users' => User::all()
         ]);
     }
 
@@ -32,7 +34,8 @@ class SectorController extends Controller
 
             Sector::create([
                 'name' => $request->get('name'),
-                'unit_id' => $request->get('unit_id')
+                'unit_id' => $request->get('unit_id'),
+                'user_id' => $request->get('user_ids[]'),
             ]);
 
             notify()->success('Setor criado com sucesso!', 'Informação!');
@@ -52,7 +55,8 @@ class SectorController extends Controller
     {
         return view('admin.sectors.edit', [
             'sector' => Sector::findOrFail($sectorId),
-            'units' => Unit::all()
+            'units' => Unit::all(),
+            'users' => User::all()
         ]);
     }
 
@@ -64,7 +68,8 @@ class SectorController extends Controller
             $sector = Sector::findOrFail($sectorId);
             $sector->update([
                 'name' => $request->get('name'),
-                'unit_id' => $request->get('unit_id')
+                'unit_id' => $request->get('unit_id'),
+                'user_id' => $request->get('user_id'),
             ]);
 
             notify()->success('Setor atualizado com sucesso!', 'Informação!');

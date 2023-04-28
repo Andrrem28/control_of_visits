@@ -102,3 +102,8 @@
         </div>
     </section>
 @endsection
+
+@section('js')
+@parent
+
+@endsection
