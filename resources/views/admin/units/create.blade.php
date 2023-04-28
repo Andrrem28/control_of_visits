@@ -25,18 +25,30 @@
                         <div class="col-md-6">
                             <label for="inputText" class="col-sm-2 col-form-label">Nome</label>
                             <input type="text" class="form-control" name="name">
+                            @error('name')
+                                <div class="alert alert-danger mt-2">{{ $message }}</div>
+                            @enderror
                         </div>
                         <div class="col-md-6">
                             <label for="inputText" class="col-sm-2 col-form-label">Endereço</label>
                             <input type="text" class="form-control" name="address">
+                            @error('address')
+                                <div class="alert alert-danger mt-2">{{ $message }}</div>
+                            @enderror
                         </div>
                         <div class="col-md-6">
                             <label for="inputText" class="col-sm-2 col-form-label">Nº do prédio</label>
                             <input type="text" class="form-control" name="building_number">
+                            @error('building_number')
+                                <div class="alert alert-danger mt-2">{{ $message }}</div>
+                            @enderror
                         </div>
                         <div class="col-md-6">
                             <label for="inputText" class="col-sm-2 col-form-label">Cidade</label>
                             <input type="text" class="form-control" name="city">
+                            @error('city')
+                                <div class="alert alert-danger mt-2">{{ $message }}</div>
+                            @enderror
                         </div>
                         <div class="col-md-6">
                             <label for="inputText" class="col-form-label">Instituição pertencente</label>
@@ -83,7 +95,10 @@
                         </div>
                         <div class="col-md-6">
                             <label for="inputText" class="col-sm-2 col-form-label">CEP</label>
-                            <input type="text" class="form-control" name="zip_code" >
+                            <input type="text" class="form-control" name="zip_code">
+                            @error('zip_code')
+                                <div class="alert alert-danger mt-2">{{ $message }}</div>
+                            @enderror
                         </div>
                         <div class="col-sm-2 py-2">
                             <a href="{{ route('admin.units.index') }}" class="btn btn-secondary btn-sm"> <i class="fa fa-arrow-left"></i> Voltar</a>
