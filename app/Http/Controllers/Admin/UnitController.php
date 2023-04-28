@@ -40,6 +40,8 @@ class UnitController extends Controller
                 'institution_id' => $request->get('institution_id')
             ]);
 
+            notify()->success('Unidade criada com sucesso!', 'Informação!');
+
             DB::commit();
 
             return to_route('admin.units.index');
@@ -77,6 +79,8 @@ class UnitController extends Controller
             ]);
 
             DB::commit();
+
+            notify()->success('Unidade atualizada com sucesso!', 'Informação!');
 
             return to_route('admin.units.index');
 

@@ -40,7 +40,7 @@ class InstitutionController extends Controller
 
            // dd($request);
 
-            // notify()->preset('institution-created');
+           notify()->success('Instituição criada com sucesso!', 'Informação!');
 
             return to_route('admin.institutions.index');
 
@@ -75,6 +75,8 @@ class InstitutionController extends Controller
             ]);
 
             DB::commit();
+
+            notify()->success('Instituição atualizada com sucesso!', 'Informação!');
 
             return to_route('admin.institutions.index');
 

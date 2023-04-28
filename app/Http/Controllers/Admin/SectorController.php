@@ -35,6 +35,8 @@ class SectorController extends Controller
                 'unit_id' => $request->get('unit_id')
             ]);
 
+            notify()->success('Setor criado com sucesso!', 'Informação!');
+
             DB::commit();
 
             return to_route('admin.sectors.index');
@@ -64,6 +66,8 @@ class SectorController extends Controller
                 'name' => $request->get('name'),
                 'unit_id' => $request->get('unit_id')
             ]);
+
+            notify()->success('Setor atualizado com sucesso!', 'Informação!');
 
             DB::commit();
 

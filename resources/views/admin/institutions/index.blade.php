@@ -11,7 +11,7 @@
             <li class="breadcrumb-item"><a href="">Inicio</a></li>
           </ol>
         </nav>
-      </div>
+    </div>
     <div class="row">
       <div class="col-lg-12">
         <div class="card">
