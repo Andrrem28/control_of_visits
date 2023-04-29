@@ -16,25 +16,39 @@
         <div class="row">
             <div class="card">
                 <div class="card-header">
-                    <h2 class="card-title">Cadastrar Setor</h2>
+                    <h2 class="card-title">Cadastrar Funcionário</h2>
                 </div>
                 <div class="card-body">
                     <!-- General Form Elements -->
                     <form action="{{ route('admin.sectors.store') }}" method="post">
                         @csrf
                         <div class="col-md-6">
-                            <label for="inputText" class="col-sm-2 col-form-label">Nome do setor</label>
+                            <label for="inputText" class="col-form-label">Nome do funcionário</label>
                             <input type="text" class="form-control" name="name" value="{{ old('name') }}">
                             @error('name')
                                 <div class="alert alert-danger mt-2">{{ $message }}</div>
                             @enderror
                         </div>
                         <div class="col-md-6">
-                            <label for="inputText" class="col-form-label">Funcionários deste setor</label>
-                            <select class="form-select" aria-label="Default select example" name="role_id" value="{{ old('role_id') }}">
+                            <label for="inputText" class="col-form-label">Nome do funcionário</label>
+                            <input type="email" class="form-control" name="email" value="{{ old('email') }}">
+                            @error('email')
+                                <div class="alert alert-danger mt-2">{{ $message }}</div>
+                            @enderror
+                        </div>
+                        <div class="col-md-6">
+                            <label for="inputText" class="col-form-label">Nome do funcionário</label>
+                            <input type="password" class="form-control" name="password">
+                            @error('password')
+                                <div class="alert alert-danger mt-2">{{ $message }}</div>
+                            @enderror
+                        </div>
+                        <div class="col-md-6">
+                            <label for="inputText" class="col-form-label">Cargo deste usuário</label>
+                            <select class="form-select" aria-label="Default select example" name="role_id">
                                 <option selected>Selecione...</option>
                                 @foreach ($roles as $role)
-                                    <option value="{{ $role->id }}">{{ $role->name }}</option>
+                                    <option value="{{ $role->id }}">{{ $role->description }}</option>
                                 @endforeach
                             </select>
                         </div>

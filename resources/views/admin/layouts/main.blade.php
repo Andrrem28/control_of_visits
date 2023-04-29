@@ -150,7 +150,7 @@
       </li><!-- End Dashboard Nav -->
 
       <li class="nav-item">
-        <a class="nav-link collapsed"  href="#">
+        <a class="nav-link collapsed"  href="{{ route('admin.users.index') }}">
           <i class="fa fa-users"></i><span>Funcionários</span></i>
         </a>
       </li><!-- End Components Nav -->
