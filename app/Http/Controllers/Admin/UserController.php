@@ -88,4 +88,22 @@ class UserController extends Controller
         }
     }
 
+    public function destroy(string $userId)
+    {
+        try {
+            $user = User::findOrFail($userId);
+            $user->delete();
+
+            notify()->success('Usuário excluído com sucesso!', 'Informação!');
+
+            DB::commit();
+
+            return to_route('admin.users.index');
+        } catch (Exception $e) {
+            DB::rollBack();
+
+            return to_route('admin.users.edit', [$userId]);
+        }
+    }
+
 }
