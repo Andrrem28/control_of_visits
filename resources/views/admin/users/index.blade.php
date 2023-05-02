@@ -34,7 +34,7 @@
                     <tr>
                         <th scope="row">{{ $user->name }}</th>
                         <td>{{ $user->email }}</td>
-                        <td>{{ $user->roles()->first()->description }}</td>
+                        <td>{{ $user->roles()->first()->description ?? null }}</td>
                         <td class="">
                             <a href="{{ route('admin.users.edit', $user->id) }}" class="btn btn-primary btn-sm"> <i class="fa fa-pen"></i> </a>
                             <!-- Button trigger modal -->

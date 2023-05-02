@@ -42,6 +42,7 @@ class SectorController extends Controller
 
             DB::commit();
 
+            
             return to_route('admin.sectors.index');
 
         } catch (Exception $e) {
