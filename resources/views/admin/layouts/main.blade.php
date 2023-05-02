@@ -174,7 +174,7 @@
       </li><!-- End Charts Nav -->
 
       <li class="nav-item">
-        <a class="nav-link collapsed"  href="#">
+        <a class="nav-link collapsed"  href="{{ route('admin.visits.index') }}">
           <i class="fa fa-eye"></i><span>Visitas</span></i>
         </a>
       </li><!-- End Icons Nav -->
