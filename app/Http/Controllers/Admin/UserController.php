@@ -43,7 +43,6 @@ class UserController extends Controller
 
             notify()->success('Usuário criado com sucesso!', 'Informação!');
 
-          //  dd($request);
             DB::commit();
 
             return to_route('admin.users.index');
@@ -55,5 +54,38 @@ class UserController extends Controller
 
     }
 
+    public function edit(string $userId)
+    {
+        return view('admin.users.edit', [
+                    'user' => User::findOrFail($userId),
+                    'roles' => ModelsRole::all(),
+                ]);
+    }
+
+    public function update(UserStoreRequest $request, string $userId)
+    {
+        try {
+            DB::beginTransaction();
+
+            $user = User::findOrFail($userId);
+            $user->update([
+                'name' => $request->get('name'),
+                'email' => $request->get('email'),
+                'password' => Hash::make($request->get('password')),
+            ]);
+
+            $user->assignRole($request->get('role_id'));
+
+            notify()->success('Usuário atualizado com sucesso!', 'Informação!');
+
+            DB::commit();
+
+            return to_route('admin.users.index');
+        } catch (Exception $e) {
+            DB::rollBack();
+
+            return to_route('admin.users.edit', [$userId]);
+        }
+    }
 
 }
