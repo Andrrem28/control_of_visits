@@ -16,7 +16,7 @@
       <div class="col-lg-12">
         <div class="card">
             <div class="card-header">
-                <a href="{{ route('admin.visits.create') }}" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i> Cadastrar Funcionário</a>
+                <a href="{{ route('admin.visits.create') }}" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i> Cadastrar Visitante</a>
             </div>
           <div class="card-body">
             <!-- Table with stripped rows -->
@@ -30,15 +30,23 @@
                   <th scope="col">Foto</th>
                   <th scope="col">Data</th>
                   <th scope="col">Status da visita</th>
+                  <th scope="col">Unidade visitada</th>
                   <th scope="col">Ações</th>
                 </tr>
               </thead>
               <tbody>
                 @foreach ($visits as $visit)
                     <tr>
-                        <th scope="row">{{-- $visit->name --}}</th>
-                        <td>{{-- $visit->email --}}</td>
-                        <td>{{-- $visit->roles()->first()->description --}}</td>
+                        <th scope="row">{{ $visit->visitor->name }}</th>
+                        <td>{{ $visit->visitor->individual_registration }}</td>
+                        <td>{{ $visit->visitor->general_record }}</td>
+                        <td>{{ $visit->visitor->general_record }}</td>
+                        <td>
+                            <img src="{{ asset('storage/' . str_replace('public/','', $visit->visitor->image))}}" alt="" width="50" height="50" />
+                        </td>
+                        <td>{{ $visit->date }}</td>
+                        <td>{{ $visit->status }}</td>
+                        <td>{{ $visit->unit->name }}</td>
                         <td class="">
                             <a href="{{ route('admin.visits.edit', $visit->id) }}" class="btn btn-primary btn-sm"> <i class="fa fa-pen"></i> </a>
                             <!-- Button trigger modal -->

@@ -26,7 +26,7 @@ class VisitStoreRequest extends FormRequest
             'individual_registration' =>'required',
             'general_record' =>'required',
             'phone_number' =>'required',
-            'image' => 'required',
+            'image' => 'required|image|mimes:png,jpg,jpeg,png',
             'date' =>'required',
             'status' => 'required',
             'unit_id' =>'required'

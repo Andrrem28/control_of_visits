@@ -3,9 +3,12 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Admin\Visit\VisitStoreRequest;
 use App\Models\Unit;
 use App\Models\Visit;
-use Illuminate\Http\Request;
+use App\Models\Visitor;
+use Exception;
+use Illuminate\Support\Facades\DB;
 
 class VisitController extends Controller
 {
@@ -23,8 +26,37 @@ class VisitController extends Controller
         ]);
     }
 
-    public function store()
+    public function store(VisitStoreRequest $request)
     {
-        
+        try {
+            DB::beginTransaction();
+
+            $visitor = Visitor::create([
+                'name' => $request->get('name'),
+                'individual_registration' => $request->get('individual_registration'),
+                'general_record' => $request->get('general_record'),
+                'phone_number' => $request->get('phone_number'),
+                'image' => $request->file('image')->store('public/images')
+            ]);
+
+            Visit::create([
+                'visitor_id' => $visitor->id,
+                'date' => $request->get('date'),
+                'status' => $request->get('status'),
+                'unit_id' => $request->get('unit_id'),
+            ]);
+
+            notify()->success('Visitante cadastrado com sucesso.', 'Informação!');
+
+            DB::commit();
+
+            return to_route('admin.visits.index');
+
+        } catch (Exception $e) {
+            DB::rollBack();
+
+            return to_route('admin.visits.create');
+        }
+
     }
 }
