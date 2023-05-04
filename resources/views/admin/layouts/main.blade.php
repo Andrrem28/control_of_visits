@@ -208,6 +208,9 @@
   <script>
     $(document).ready(function(){
         $('.cep').inputmask('99.999-99');
+        $('.tel').inputmask('(99) 9.9999.9999');
+        $('.cpf').inputmask('999.999.999-99');
+        $('.rg').inputmask('999.999.999');
     });
   </script>
 
