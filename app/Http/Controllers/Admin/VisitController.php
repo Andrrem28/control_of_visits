@@ -81,7 +81,7 @@ class VisitController extends Controller
             ]);
 
             $visitor = $visit->visitor;
-            
+
             $visitor->update([
                 'name' => $request->get('name'),
                 'individual_registration' => $request->get('individual_registration'),
@@ -99,7 +99,27 @@ class VisitController extends Controller
         } catch (Exception $e) {
             DB::rollBack();
 
-            return to_route('admin.visits.create');
+            return to_route('admin.visits.edit', [$visitId]);
+        }
+    }
+
+    public function destroy(string $visitId)
+    {
+        try {
+            DB::beginTransaction();
+
+            $visit = Visit::findOrFail($visitId);
+            $visit->delete();
+
+            notify()->success('Visitante deletedo(a) com sucesso.', 'Informação!');
+
+            DB::commit();
+
+            return to_route('admin.visits.index');
+        } catch (Exception $e) {
+            DB::rollBack();
+
+            return to_route('admin.visits.index');
         }
     }
 }
