@@ -122,4 +122,53 @@ class VisitController extends Controller
             return to_route('admin.visits.index');
         }
     }
+
+    public function confirmVisit(string $visitId)
+    {
+        try {
+            DB::beginTransaction();
+
+            $visit = Visit::findOrFail($visitId);
+            $visit->update([
+                'date' => now()->format('d/m/Y'),
+                'status' => 'Visitado'
+            ]);
+
+            notify()->success('Visita realizada com sucesso.', 'Informação!');
+
+            DB::commit();
+
+            return to_route('admin.visits.index');
+
+        } catch (\Throwable $th) {
+            DB::rollBack();
+
+            return to_route('admin.visits.index');
+        }
+    }
+
+    public function canceledVisit(string $visitId)
+    {
+        try {
+            DB::beginTransaction();
+
+            $visit = Visit::findOrFail($visitId);
+            $visit->update([
+                'date' => now()->format('d/m/Y'),
+                'status' => 'Cancelada'
+            ]);
+
+            notify()->success('Visita cancelada com sucesso.', 'Informação!');
+
+            DB::commit();
+
+            return to_route('admin.visits.index');
+
+        } catch (\Throwable $th) {
+            DB::rollBack();
+
+            return to_route('admin.visits.index');
+        }
+    }
+
 }
