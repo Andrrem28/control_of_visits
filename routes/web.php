@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 */
 Route::redirect('/', 'login');
 
-Route::prefix('admin')->name('admin.')->group(function () {
+Route::middleware('auth')->prefix('admin')->name('admin.')->group(function () {
     Route::resource('institutions', InstitutionController::class);
     Route::resource('units', UnitController::class);
     Route::resource('sectors', SectorController::class);

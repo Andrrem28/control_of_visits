@@ -185,6 +185,7 @@ return [
         /*
          * Package Service Providers...
          */
+        App\Providers\FortifyServiceProvider::class,
         Mckenziearts\Notify\LaravelNotifyServiceProvider::class,
         Spatie\Permission\PermissionServiceProvider::class,
 
