@@ -61,13 +61,13 @@
                         <i class="bi bi-search"></i>
                     </a>
                 </li><!-- End Search Icon-->
-
+ <!--
                 <li class="nav-item dropdown">
 
                     <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
                         <i class="bi bi-bell"></i>
                         <span class="badge bg-primary badge-number">4</span>
-                    </a><!-- End Notification Icon -->
+                    </a>  -- End Notification Icon --
 
                     <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow notifications">
                         <li class="dropdown-header">
@@ -81,46 +81,45 @@
                         <li class="notification-item">
                             <i class="bi bi-exclamation-circle text-warning"></i>
                             <div>
-                                <!-- Info new visit confirmation -->
+                                 Info new visit confirmation
                                 <h4>Lorem Ipsum</h4>
                                 <p>Quae dolorem earum veritatis oditseno</p>
                                 <p>30 min. ago</p>
-                                <!-- -->
+
 
                             </div>
                         </li>
-                    </ul><!-- End Notification Dropdown Items -->
-
+                    </ul> -- End Notification Dropdown Items --
+              -->
                 </li><!-- End Notification Nav -->
 
                 <li class="nav-item dropdown pe-3">
-
                     <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#"
                         data-bs-toggle="dropdown">
                         <!-- Info current User-->
-                        <span class="d-none d-md-block dropdown-toggle ps-2">A. Martins</span>
+                        <span class="d-none d-md-block dropdown-toggle ps-2"> <i class="fa fa-user"></i></span>
                     </a><!-- End Profile Iamge Icon -->
-
                     <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
-                        <li class="dropdown-header">
-                            <!-- Dados do User-->
-                            <h6>André Martins</h6>
-                            <span>Web Designer</span>
-                            <!-- End -->
-                        </li>
-                        <li>
-                            <hr class="dropdown-divider">
-                        </li>
-                        <li>
-                            <hr class="dropdown-divider">
-                        </li>
-                        <li>
-                            <hr class="dropdown-divider">
-                        </li>
-                        <li>
-                            <hr class="dropdown-divider">
-                        </li>
+                       <!--  <li class="dropdown-header">
+                                Dados do User
+                                <h6>André Martins</h6>
+                                <span>Web Designer</span>
+                                End
+                            </li>
 
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                        -->
                         <li>
                             <a class="dropdown-item d-flex align-items-center" href="#">
                                 <i class="bi bi-box-arrow-right"></i>
@@ -220,8 +219,7 @@
             $('.rg').inputmask('999.999.999');
         });
     </script>
-
-
+    
     <!-- Notify Package -->
     @notifyJs
 

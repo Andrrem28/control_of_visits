@@ -27,7 +27,7 @@ class VisitUpdateRequest extends FormRequest
             'general_record' =>'required',
             'phone_number' =>'required',
             'image' => 'required',
-            'date' =>'required|date_format:d/m/Y',
+            'date' =>'required',
             'status' => 'required',
             'unit_id' =>'required'
         ];
