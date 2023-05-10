@@ -16,8 +16,8 @@
             <div class="col-lg-12">
                 <div class="card">
                     <div class="card-header">
-                        <a href="{{ route('admin.visits.create') }}" class="btn btn-primary btn-sm"><i
-                                class="fa fa-plus"></i> Cadastrar Visitante</a>
+                        <a href="{{ route('admin.verification') }}" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i>
+                            Cadastrar Visitante</a>
                     </div>
                     <div class="card-body">
                         <!-- Table with stripped rows -->

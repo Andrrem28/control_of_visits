@@ -61,7 +61,7 @@
                         <i class="bi bi-search"></i>
                     </a>
                 </li><!-- End Search Icon-->
- <!--
+                <!--
                 <li class="nav-item dropdown">
 
                     <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
@@ -100,7 +100,7 @@
                         <span class="d-none d-md-block dropdown-toggle ps-2"> <i class="fa fa-user"></i></span>
                     </a><!-- End Profile Iamge Icon -->
                     <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
-                       <!--  <li class="dropdown-header">
+                        <!--  <li class="dropdown-header">
                                 Dados do User
                                 <h6>André Martins</h6>
                                 <span>Web Designer</span>
@@ -179,7 +179,7 @@
             </li><!-- End Charts Nav -->
 
             <li class="nav-item">
-                <a class="nav-link collapsed" href="{{ route('admin.visits.index') }}">
+                <a class="nav-link collapsed" href="{{ route('admin.verification') }}">
                     <i class="fa fa-eye"></i><span>Visitas</span></i>
                 </a>
             </li><!-- End Icons Nav -->
@@ -219,7 +219,7 @@
             $('.rg').inputmask('999.999.999');
         });
     </script>
-    
+
     <!-- Notify Package -->
     @notifyJs
 

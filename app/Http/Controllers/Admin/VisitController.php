@@ -20,6 +20,24 @@ class VisitController extends Controller
         ]);
     }
 
+    public function checkVisitor()
+    {
+        return view('admin.visits.verification');
+    }
+
+    public function checkVisit(string $visitorId)
+    {
+        $data = Visitor::findOrFail($visitorId);
+
+        $visitor = Visitor::where('individual_registration', '=', $data['individual_registration'])->get();
+
+        if ($data == $visitor) {
+            return to_route('admin.visits.create');
+        } else {
+            return to_route('admin.visits.show');
+        }
+    }
+
     public function create()
     {
         return view('admin.visits.create', [

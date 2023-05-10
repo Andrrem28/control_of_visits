@@ -23,7 +23,7 @@ class VisitStoreRequest extends FormRequest
     {
         return [
             'name' =>'required',
-            'individual_registration' =>'required|unique:visitors,individual_registration',
+            'individual_registration' =>'required',
             'general_record' =>'required',
             'phone_number' =>'required',
             'image' => 'required|image|mimes:png,jpg,jpeg,png',
