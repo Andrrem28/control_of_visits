@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Admin\Visit\GetConsultVisitor;
 use App\Http\Requests\Admin\Visit\VisitStoreRequest;
 use App\Http\Requests\Admin\Visit\VisitUpdateRequest;
 use App\Models\Unit;
@@ -18,24 +19,6 @@ class VisitController extends Controller
         return view('admin.visits.index', [
             'visits' => Visit::all()
         ]);
-    }
-
-    public function checkVisitor()
-    {
-        return view('admin.visits.verification');
-    }
-
-    public function checkVisit(string $visitorId)
-    {
-        $data = Visitor::findOrFail($visitorId);
-
-        $visitor = Visitor::where('individual_registration', '=', $data['individual_registration'])->get();
-
-        if ($data == $visitor) {
-            return to_route('admin.visits.create');
-        } else {
-            return to_route('admin.visits.show');
-        }
     }
 
     public function create()
@@ -80,7 +63,7 @@ class VisitController extends Controller
 
     public function edit(string $visitId)
     {
-        return view('admin.visits.edit', [
+        return to_route('admin.visits.edit', [
             'visit' => Visit::findOrFail($visitId),
             'units' => Unit::all()
         ]);
