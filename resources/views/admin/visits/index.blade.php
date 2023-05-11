@@ -14,7 +14,7 @@
         </div>
         <div class="row">
             <div class="col-lg-12">
-                <div class="card">
+                <div class="card" style="overflow: scroll;">
                     <div class="card-header">
                         <a href="{{ route('admin.verification') }}" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i>
                             Cadastrar Visitante</a>

@@ -14,7 +14,7 @@
             </nav>
         </div>
         <div class="row">
-            <div class="card">
+            <div class="card" style="overflow: scroll;">
                 <div class="card-header">
                     <h2 class="card-title">Cadastrar Unidade</h2>
                 </div>
