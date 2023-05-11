@@ -17,6 +17,13 @@ class VisitorController extends Controller
         return view('admin.visits.verification');
     }
 
+    public function visitorProfile($visitId)
+    {
+        return to_route('admin.visitor-profile', [
+            'visitor' => Visit::findOrFail($visitId)
+        ]);
+    }
+
     public function consultVisitor(GetConsultVisitor $request)
     {
         try {
@@ -26,8 +33,9 @@ class VisitorController extends Controller
 
             if($visitor)
             {
-                return to_route('admin.visits.create', [
+                return view('admin.visits.visitor-profile', [
                     'units' => Unit::all(),
+                    'visitor' => $visitor
                 ]);
             } else {
                 return to_route('admin.visits.create', [

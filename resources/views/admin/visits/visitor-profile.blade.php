@@ -24,21 +24,21 @@
                         @csrf
                         <div class="col-md-6">
                             <label for="inputText" class="col-form-label">Nome do visitante</label>
-                            <input type="text" class="form-control" name="name" value="{{ old('name') }}">
+                            <input type="text" class="form-control" name="name" value="{{ $visitor->name }}">
                             @error('name')
                                 <div class="alert alert-danger mt-2">{{ $message }}</div>
                             @enderror
                         </div>
                         <div class="col-md-6">
                             <label for="inputText" class="col-sm-2 col-form-label">CPF do visitante</label>
-                            <input type="text" class="form-control cpf" name="individual_registration" value="{{ old('individual_registration') }}">
+                            <input type="text" class="form-control cpf" name="individual_registration" value="{{ $visitor->individual_registration }}">
                             @error('individual_registration')
                                 <div class="alert alert-danger mt-2">{{ $message }}</div>
                             @enderror
                         </div>
                         <div class="col-md-6">
                             <label for="inputText" class="col-sm-2 col-form-label">RG do visitante</label>
-                            <input type="text" class="form-control rg" name="general_record" value="{{ old('general_record') }}">
+                            <input type="text" class="form-control rg" name="general_record" value="{{ $visitor->general_record }}">
                             @error('general_record')
                                 <div class="alert alert-danger mt-2">{{ $message }}</div>
                             @enderror
@@ -46,7 +46,7 @@
 
                         <div class="col-md-6">
                             <label for="inputText" class="col-sm-2 col-form-label">Nº para contato</label>
-                            <input type="text" class="form-control tel" name="phone_number" value="{{ old('phone_number') }}">
+                            <input type="text" class="form-control tel" name="phone_number" value="{{ $visitor->phone_number }}">
                             @error('phone_number')
                                 <div class="alert alert-danger mt-2">{{ $message }}</div>
                             @enderror
