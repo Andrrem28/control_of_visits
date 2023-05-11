@@ -33,6 +33,7 @@ class UnitController extends Controller
             Unit::create([
                 'name' => $request->get('name'),
                 'address' => $request->get('address'),
+                'neighborhood' => $request->get('neighborhood'),
                 'city' => $request->get('city'),
                 'state' => $request->get('state'),
                 'building_number' => $request->get('building_number'),
@@ -71,6 +72,7 @@ class UnitController extends Controller
             $unit->update([
                 'name' => $request->get('name'),
                 'address' => $request->get('address'),
+                'neighborhood' => $request->get('neighborhood'),
                 'city' => $request->get('city'),
                 'state' => $request->get('state'),
                 'building_number' => $request->get('building_number'),

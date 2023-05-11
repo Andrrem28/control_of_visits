@@ -16,6 +16,7 @@ return new class extends Migration
             $table->timestamps();
             $table->string('name');
             $table->string('address');
+            $table->string('neighborhood');
             $table->string('city');
             $table->string('building_number');
             $table->string('state');

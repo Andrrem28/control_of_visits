@@ -24,6 +24,7 @@ class UnitStoreRequest extends FormRequest
         return [
             'name' => 'required',
             'address' => 'required',
+            'neighborhood' => 'required',
             'city' => 'required',
             'building_number' => 'required',
             'state' => 'required',

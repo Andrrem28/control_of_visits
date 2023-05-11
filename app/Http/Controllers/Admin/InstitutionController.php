@@ -30,6 +30,7 @@ class InstitutionController extends Controller
             Institution::create([
                 'name' => $request->get('name'),
                 'address' => $request->get('address'),
+                'neighborhood' => $request->get('neighborhood'),
                 'building_number' => $request->get('building_number'),
                 'city' => $request->get('city'),
                 'state' => $request->get('state'),
@@ -68,6 +69,7 @@ class InstitutionController extends Controller
             $institution->update([
                 'name' => $request->get('name'),
                 'address' => $request->get('address'),
+                'neighborhood' => $request->get('neighborhood'),
                 'building_number' => $request->get('building_number'),
                 'city' => $request->get('city'),
                 'state' => $request->get('state'),

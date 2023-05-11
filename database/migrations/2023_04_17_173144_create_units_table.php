@@ -16,6 +16,7 @@ return new class extends Migration
             $table->foreignUuid('institution_id');
             $table->string('name');
             $table->string('address');
+            $table->string('neighborhood');
             $table->string('city');
             $table->string('state');
             $table->string('building_number');
