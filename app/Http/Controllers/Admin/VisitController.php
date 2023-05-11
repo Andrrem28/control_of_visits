@@ -63,7 +63,7 @@ class VisitController extends Controller
 
     public function edit(string $visitId)
     {
-        return to_route('admin.visits.edit', [
+        return view('admin.visits.edit', [
             'visit' => Visit::findOrFail($visitId),
             'units' => Unit::all()
         ]);

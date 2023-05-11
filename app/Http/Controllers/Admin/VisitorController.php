@@ -46,5 +46,5 @@ class VisitorController extends Controller
             dd($e->getMessage());
             return view('admin.visits.verification');
         }
-    }
+    }   
 }
