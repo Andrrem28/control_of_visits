@@ -213,7 +213,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/3.3.4/jquery.inputmask.bundle.min.js"></script>
     <script>
         $(document).ready(function() {
-            $('#cep').inputmask('99.999-999');
+            $('#zip_code').inputmask('99.999-999');
             $('.tel').inputmask('(99) 9.9999.9999');
             $('.cpf').inputmask('999.999.999-99');
             $('.rg').inputmask('999.999.999');
@@ -223,21 +223,19 @@
     <script>
         function limpa_formulário_cep() {
             //Limpa valores do formulário de cep.
-            document.getElementById('rua').value = ("");
-            document.getElementById('bairro').value = ("");
-            document.getElementById('cidade').value = ("");
-            document.getElementById('uf').value = ("");
-            document.getElementById('ibge').value = ("");
+            document.getElementById('address').value = ("");
+            document.getElementById('neighborhood').value = ("");
+            document.getElementById('city').value = ("");
+            document.getElementById('state').value = ("");
         }
 
         function meu_callback(conteudo) {
             if (!("erro" in conteudo)) {
                 //Atualiza os campos com os valores.
-                document.getElementById('rua').value = (conteudo.logradouro);
-                document.getElementById('bairro').value = (conteudo.bairro);
-                document.getElementById('cidade').value = (conteudo.localidade);
-                document.getElementById('uf').value = (conteudo.uf);
-                document.getElementById('ibge').value = (conteudo.ibge);
+                document.getElementById('address').value = (conteudo.logradouro);
+                document.getElementById('neighborhood').value = (conteudo.bairro);
+                document.getElementById('city').value = (conteudo.localidade);
+                document.getElementById('state').value = (conteudo.uf);
             } //end if.
             else {
                 //CEP não Encontrado.
@@ -261,11 +259,10 @@
                 if (validacep.test(cep)) {
 
                     //Preenche os campos com "..." enquanto consulta webservice.
-                    document.getElementById('rua').value = "...";
-                    document.getElementById('bairro').value = "...";
-                    document.getElementById('cidade').value = "...";
-                    document.getElementById('uf').value = "...";
-                    document.getElementById('ibge').value = "...";
+                    document.getElementById('address').value = "...";
+                    document.getElementById('neighborhood').value = "...";
+                    document.getElementById('city').value = "...";
+                    document.getElementById('state').value = "...";
 
                     //Cria um elemento javascript.
                     var script = document.createElement('script');

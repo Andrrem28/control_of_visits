@@ -41,7 +41,7 @@ class InstitutionController extends Controller
 
            // dd($request);
 
-           notify()->success('Instituição criada com sucesso!', 'Informação!');
+            notify()->success('Instituição criada com sucesso!', 'Informação!');
 
             return to_route('admin.institutions.index');
 

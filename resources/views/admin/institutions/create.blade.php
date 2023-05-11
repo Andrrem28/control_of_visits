@@ -31,7 +31,7 @@
                         </div>
                         <div class="col-md-6">
                             <label for="inputText" class="col-sm-2 col-form-label">CEP</label>
-                            <input type="text" class="form-control" id="cep" name="zip_code"
+                            <input type="text" class="form-control" id="zip_code" name="zip_code"
                                 onblur="pesquisacep(this.value);" value="{{ old('zip_code') }}">
                             @error('zip_code')
                                 <div class="alert alert-danger mt-2">{{ $message }}</div>
@@ -42,7 +42,7 @@
                         </div>
                         <div class="col-md-6">
                             <label for="inputText" class="col-sm-2 col-form-label">Endereço</label>
-                            <input type="text" class="form-control" name="address" id="rua"
+                            <input type="text" class="form-control" name="address" id="address"
                                 value="{{ old('address') }}">
                             @error('address')
                                 <div class="alert alert-danger mt-2">{{ $message }}</div>
@@ -50,7 +50,7 @@
                         </div>
                         <div class="col-md-6">
                             <label for="inputText" class="col-sm-2 col-form-label">Bairro</label>
-                            <input type="text" class="form-control" name="neighborhood" id="bairro"
+                            <input type="text" class="form-control" name="neighborhood" id="neighborhood"
                                 value="{{ old('neighborhood') }}">
                             @error('neighborhood')
                                 <div class="alert alert-danger mt-2">{{ $message }}</div>
@@ -66,7 +66,7 @@
                         </div>
                         <div class="col-md-6">
                             <label for="inputText" class="col-sm-2 col-form-label">Cidade</label>
-                            <input type="text" class="form-control" name="city" id="cidade"
+                            <input type="text" class="form-control" name="city" id="city"
                                 value="{{ old('city') }}">
                             @error('city')
                                 <div class="alert alert-danger mt-2">{{ $message }}</div>
@@ -74,7 +74,7 @@
                         </div>
                         <div class="col-md-6">
                             <label for="inputText" class="col-sm-2 col-form-label">Estado</label>
-                            <input type="text" class="form-control" name="state" id="uf"
+                            <input type="text" class="form-control" name="state" id="state"
                                 value="{{ old('state') }}">
                             @error('city')
                                 <div class="alert alert-danger mt-2">{{ $message }}</div>
@@ -92,15 +92,6 @@
         </div>
     </section>
     <div class="d-none">
-        <label>Cep:
-            <input name="cep" type="text" id="cep" value="" size="10" maxlength="9"
-                onblur="pesquisacep(this.value);" /></label><br />
-        <label>Rua:
-            <input name="rua" type="text" id="rua" size="60" /></label><br />
-        <label>Bairro:
-            <input name="bairro" type="text" id="bairro" size="40" /></label><br />
-        <label>Cidade:
-            <input name="cidade" type="text" id="cidade" size="40" /></label><br />
         <label>Estado:
             <input name="uf" type="text" id="uf" size="2" /></label><br />
         <label>IBGE:

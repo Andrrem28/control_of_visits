@@ -8,7 +8,6 @@ use App\Models\Unit;
 use App\Models\Visit;
 use App\Models\Visitor;
 use Exception;
-use Illuminate\Http\Request;
 
 class VisitorController extends Controller
 {
@@ -38,7 +37,7 @@ class VisitorController extends Controller
                     'visitor' => $visitor
                 ]);
             } else {
-                return to_route('admin.visits.create', [
+                return view('admin.visits.create', [
                     'units' => Unit::all(),
                 ]);
             }
@@ -46,5 +45,5 @@ class VisitorController extends Controller
             dd($e->getMessage());
             return view('admin.visits.verification');
         }
-    }   
+    }
 }
