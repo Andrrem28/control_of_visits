@@ -7,16 +7,17 @@
         <div class="pagetitle">
             <h1>Dashboard</h1>
             <nav>
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="{{ route('admin.visits.index') }}">Inicio</a></li>
-                <li class="breadcrumb-item"> Área de cadastro</li>
-            </ol>
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="{{ route('admin.visits.index') }}">Inicio</a></li>
+                    <li class="breadcrumb-item"> Área de cadastro</li>
+                </ol>
             </nav>
         </div>
         <div class="row">
             <div class="card">
                 <div class="card-header">
                     <h2 class="card-title">Cadastrar Visitante</h2>
+                    <span class="badge bg-info text-dark"><i class="bi bi-info-circle me-1"></i> Visitante localizado.</span>
                 </div>
                 <div class="card-body">
                     <!-- General Form Elements -->
@@ -31,14 +32,16 @@
                         </div>
                         <div class="col-md-6">
                             <label for="inputText" class="col-sm-2 col-form-label">CPF do visitante</label>
-                            <input type="text" class="form-control cpf" name="individual_registration" value="{{ $visitor->individual_registration }}">
+                            <input type="text" class="form-control cpf" name="individual_registration"
+                                value="{{ $visitor->individual_registration }}">
                             @error('individual_registration')
                                 <div class="alert alert-danger mt-2">{{ $message }}</div>
                             @enderror
                         </div>
                         <div class="col-md-6">
                             <label for="inputText" class="col-sm-2 col-form-label">RG do visitante</label>
-                            <input type="text" class="form-control rg" name="general_record" value="{{ $visitor->general_record }}">
+                            <input type="text" class="form-control rg" name="general_record"
+                                value="{{ $visitor->general_record }}">
                             @error('general_record')
                                 <div class="alert alert-danger mt-2">{{ $message }}</div>
                             @enderror
@@ -46,7 +49,8 @@
 
                         <div class="col-md-6">
                             <label for="inputText" class="col-sm-2 col-form-label">Nº para contato</label>
-                            <input type="text" class="form-control tel" name="phone_number" value="{{ $visitor->phone_number }}">
+                            <input type="text" class="form-control tel" name="phone_number"
+                                value="{{ $visitor->phone_number }}">
                             @error('phone_number')
                                 <div class="alert alert-danger mt-2">{{ $message }}</div>
                             @enderror
@@ -87,8 +91,10 @@
                             </select>
                         </div>
                         <div class="col-sm-2 py-2">
-                            <a href="{{ route('admin.visits.index') }}" class="btn btn-secondary btn-sm"> <i class="fa fa-arrow-left"></i> Voltar</a>
-                            <button class="btn btn-success btn-sm" type="submit"> <i class="fa fa-save"></i> Salvar</button>
+                            <a href="{{ route('admin.visits.index') }}" class="btn btn-secondary btn-sm"> <i
+                                    class="fa fa-arrow-left"></i> Voltar</a>
+                            <button class="btn btn-success btn-sm" type="submit"> <i class="fa fa-save"></i>
+                                Salvar</button>
                         </div>
                     </form>
                 </div>

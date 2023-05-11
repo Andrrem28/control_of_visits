@@ -19,7 +19,7 @@
                 </div>
                 <div class="card-body">
                     <!-- General Form Elements -->
-                    <form action="{{ route('admin.verification-visitor') }}" method="get">
+                    <form action="{{ route('admin.verification-visitor') }}" method="post">
                         @csrf
                         <div class="col-md-6">
                             <label for="inputText" class="col-sm-2 col-form-label">CPF do visitante</label>
