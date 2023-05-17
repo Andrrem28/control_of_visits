@@ -14,7 +14,7 @@
             </nav>
         </div>
         <div class="row">
-            <div class="card">
+            <div class="card" style="overflow: scroll;">
                 <div class="card-header">
                     <h2 class="card-title">Cadastrar Visitante</h2>
                     <span class="badge bg-info text-dark"><i class="bi bi-info-circle me-1"></i> Visitante não encontrado no
@@ -63,10 +63,41 @@
                             @error('image')
                                 <div class="alert alert-danger mt-2">{{ $message }}</div>
                             @enderror
+                            <div class="py-1">
+                                <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal"
+                                                    data-bs-target="#deleteVisit">
+                                                    <i class="fa fa-camera"> </i> Capturar foto
+                                </button>
+                            </div>
+                            <div class="modal fade" id="deleteVisit" tabindex="-1">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title">Capturar foto</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <p>Posicione a câmera de forma que enquadre corretamente.</p>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <video autoplay></video>
+                                            <canvas></canvas>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary"
+                                                data-bs-dismiss="modal"> <i class="fa fa-times"></i> Cancelar</button>
+
+                                                <button id="capture" type="button" class="btn btn-success"
+                                                data-bs-dismiss="modal"><i class="fa fa-save"></i> Tirar foto</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
 
                         <div class="col-md-6">
-                            <label for="inputText" class="col-form-label">Instituição pertencente</label>
+                            <label for="inputText" class="col-form-label">Unidade visitada.</label>
                             <select class="form-select" aria-label="Default select example" name="unit_id">
                                 <option selected>Selecione...</option>
                                 @foreach ($units as $unit)

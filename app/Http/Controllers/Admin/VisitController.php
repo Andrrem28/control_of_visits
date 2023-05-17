@@ -172,4 +172,9 @@ class VisitController extends Controller
         }
     }
 
+    public function capturePhoto()
+    {
+        return view('admin.visits.picture');
+    }
+
 }

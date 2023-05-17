@@ -1238,3 +1238,10 @@ h6 {
     z-index: 999;
     position: relative;
 }
+
+#take-photo {
+    position: relative;
+    margin-left: 600px;
+    left: 450px;
+    bottom: 130px;
+}

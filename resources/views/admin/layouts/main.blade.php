@@ -256,7 +256,32 @@
     </script>
     <!-- Notify Package -->
     @notifyJs
+    <script>
+        var video = document.querySelector('video');
 
+navigator.mediaDevices.getUserMedia({video:true})
+.then(stream => {
+    video.srcObject = stream;
+    video.play();
+})
+.catch(error => {
+    console.log(error);
+})
+
+document.querySelector('#capture').addEventListener('click', () => {
+    var canvas = document.querySelector('canvas');
+        canvas.height = video.videoHeight;
+        canvas.width = video.videoWidth;
+    var context = canvas.getContext('2d');
+        context.drawImage(video, 0, 0);
+    var link = document.createElement('a');
+        link.download = 'photo-visitor.png';
+        link.href = canvas.toDataURL();
+        link.textContent = 'Salvar';
+
+        document.body.appendChild(link);
+});
+    </script>
     <!-- Template Main JS File -->
     <script src="{{ asset('NiceAdmin/assets/js/main.js') }}"></script>
 </body>
