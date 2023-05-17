@@ -20,7 +20,7 @@
                     <i class="fa fa-building"></i>
                   </div>
                   <div class="ps-3">
-                    <h6>145</h6>
+                    <h6>{{ $institutions    }}</h6>
                   </div>
                 </div>
               </div>
@@ -38,7 +38,7 @@
                     <i class="fa fa-house"></i>
                   </div>
                   <div class="ps-3">
-                    <h6>$3,264</h6>
+                    <h6>{{ $units }}</h6>
                   </div>
                 </div>
               </div>
@@ -56,7 +56,7 @@
                     <i class="fa fa-eye"></i>
                   </div>
                   <div class="ps-3">
-                    <h6>1244</h6>
+                    <h6>{{ $visits }}</h6>
                   </div>
                 </div>
               </div>
@@ -75,7 +75,7 @@
                     <i class="fa fa-users"></i>
                   </div>
                   <div class="ps-3">
-                    <h6>1244</h6>
+                    <h6>{{ $visitors }}</h6>
                   </div>
                 </div>
 
@@ -93,7 +93,7 @@
                     <i class="fa fa-users"></i>
                   </div>
                   <div class="ps-3">
-                    <h6>1244</h6>
+                    <h6>{{ $users }}</h6>
                   </div>
                 </div>
 
@@ -114,11 +114,21 @@
                   document.addEventListener("DOMContentLoaded", () => {
                     new ApexCharts(document.querySelector("#reportsChart"), {
                       series: [{
-                        name: 'Visitas',
-                        data: [31, 40, 28, 51, 42, 82, 56],
+                        name: 'Instituições',
+                        data: [10, 40, 90, 50, 25, 70, 56],
                       }, {
+                        name: 'Unidades',
+                        data: [2, 25, 10, 60, 55, 23, 8]
+                      },
+                      {
+                        name: 'Visitas',
+                        data: [85, 36, 69, 67, 34, 19, 41]
+                      },{
                         name: 'Visitantes',
-                        data: [11, 32, 45, 32, 34, 52, 41]
+                        data: [32, 32, 19, 32, 19, 52, 19]
+                      },{
+                        name: 'Funcionários',
+                        data: [11, 19, 45, 19, 34, 52, 19]
                       },
                      ],
                       chart: {

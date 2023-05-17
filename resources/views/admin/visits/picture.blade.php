@@ -1,5 +1,3 @@
-
-
 @section('title', 'Captura de foto')
 
 @section('content')

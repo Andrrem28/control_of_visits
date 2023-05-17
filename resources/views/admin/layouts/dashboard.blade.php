@@ -153,31 +153,31 @@
       </li><!-- End Dashboard Nav -->
 
       <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
+        <a class="nav-link" href="{{ route('admin.users.index') }}">
           <i class="fa fa-users"></i><span>Funcionários</span></i>
         </a>
       </li><!-- End Components Nav -->
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="{{ route('admin.institutions.index') }}">
+        <a class="nav-link " href="{{ route('admin.institutions.index') }}">
           <i class="fa fa-building"></i><span>Instituições</span></i>
         </a>
       </li><!-- End Forms Nav -->
 
       <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-toggle="collapse" href="#">
+        <a class="nav-link " data-bs-toggle="collapse" href="#">
           <i class="fa fa-house"></i><span>Tables</span></i>
         </a>
       </li><!-- End Tables Nav -->
 
       <li class="nav-item">
-        <a class="nav-link collapsed"  href="#">
+        <a class="nav-link"  href="#">
           <i class="fa fa-door-open"></i><span>Setores</span></i>
         </a>
       </li><!-- End Charts Nav -->
 
       <li class="nav-item">
-        <a class="nav-link collapsed"  href="#">
+        <a class="nav-link"  href="#">
             <i class="fa fa-eye"></i><span>Visitas</span></i>
         </a>
       </li><!-- End Icons Nav -->
@@ -203,7 +203,7 @@
   <!-- ======= Footer ======= -->
   <footer id="footer" class="footer">
     <div class="copyright">
-      &copy; Copyright <strong><span>NiceAdmin</span></strong>. All Rights Reserved
+      &copy; Copyright <strong><span>André Martins</span></strong>. All Rights Reserved
     </div>
     <div class="credits">
       <!-- All the links in the footer should remain intact. -->
