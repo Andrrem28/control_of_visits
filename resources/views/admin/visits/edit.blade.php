@@ -63,6 +63,11 @@
                             @error('image')
                                 <div class="alert alert-danger mt-2">{{ $message }}</div>
                             @enderror
+                            {{--
+                                <div class="py-1">
+                                    <a href="{{ route('admin.take-a-picture')}}" class="btn btn-info btn-sm" target="blank"> <i class="fa fa-camera" ></i> Tirar foto</a>
+                                </div>
+                            --}}
                         </div>
 
                         <div class="col-md-6">

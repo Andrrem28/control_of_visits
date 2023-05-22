@@ -5,7 +5,7 @@
 @section('content')
     <section class="section">
         <div class="pagetitle">
-            <h1>Dashboard</h1>
+            <h1>Área dos Visitantes/Visitas</h1>
             <nav>
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="">Inicio</a></li>
@@ -15,10 +15,12 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="card" style="overflow: scroll;">
-                    <div class="card-header">
-                        <a href="{{ route('admin.verification') }}" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i>
-                            Cadastrar Visitante</a>
-                    </div>
+                    @can('manage_visit_and_visitor')
+                        <div class="card-header">
+                            <a href="{{ route('admin.verification') }}" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i>
+                                Cadastrar Visitante</a>
+                        </div>
+                    @endcan
                     <div class="card-body">
                         <!-- Table with stripped rows -->
                         <table class="table datatable">
@@ -50,21 +52,30 @@
                                         <td>{{ $visit->status }}</td>
                                         <td>{{ $visit->unit->name }}</td>
                                         <td class="">
-                                            <a href="{{ route('admin.visits.edit', $visit->id) }}"
-                                                class="btn btn-primary btn-sm"> <i class="fa fa-pen"></i> </a>
+                                            @can('manage_visit_and_visitor')
+                                                <a href="{{ route('admin.visits.edit', $visit->id) }}"
+                                                    class="btn btn-primary btn-sm"> <i class="fa fa-pen"></i> </a>
+                                            @endcan
+
                                             <!-- Button trigger modal -->
-                                            <button type="button" class="btn btn-success btn-sm" data-bs-toggle="modal"
-                                                data-bs-target="#confirmVisit">
-                                                <i class="fa fa-check"></i>
-                                            </button>
-                                            <button type="button" class="btn btn-warning btn-sm" data-bs-toggle="modal"
-                                                data-bs-target="#cancelVisit">
-                                                <i class="fa fa-times"></i>
-                                            </button>
-                                            <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal"
-                                                data-bs-target="#deleteVisit">
-                                                <i class="fa fa-trash"></i>
-                                            </button>
+                                            @can('manage_visit_and_visitor')
+                                                <button type="button" class="btn btn-success btn-sm" data-bs-toggle="modal"
+                                                    data-bs-target="#confirmVisit">
+                                                    <i class="fa fa-check"></i>
+                                                </button>
+                                            @endcan
+                                            @can('manage_visit_and_visitor')
+                                                <button type="button" class="btn btn-warning btn-sm" data-bs-toggle="modal"
+                                                    data-bs-target="#cancelVisit">
+                                                    <i class="fa fa-times"></i>
+                                                </button>
+                                            @endcan
+                                            @can('manage_all')
+                                                <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal"
+                                                    data-bs-target="#deleteVisit">
+                                                    <i class="fa fa-trash"></i>
+                                                </button>
+                                            @endcan
                                         </td>
                                     </tr>
                                     <div class="modal fade" id="confirmVisit" tabindex="-1">
@@ -128,6 +139,7 @@
                                                 <div class="modal-body">
                                                     <p>Deseja deletar esta visita/visitante?</p>
                                                 </div>
+
                                                 <div class="modal-footer">
                                                     <button type="button" class="btn btn-secondary"
                                                         data-bs-dismiss="modal"> <i class="fa fa-times"></i> Não</button>

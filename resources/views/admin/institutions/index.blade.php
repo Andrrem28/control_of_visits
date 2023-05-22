@@ -5,7 +5,7 @@
 @section('content')
     <section class="section">
         <div class="pagetitle">
-            <h1>Dashboard</h1>
+            <h1>Área inicial</h1>
             <nav>
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="">Inicio</a></li>

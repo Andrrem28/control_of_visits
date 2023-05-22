@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Admin\Visit\GetConsultVisitor;
 use App\Http\Requests\Admin\Visit\VisitStoreRequest;
 use App\Http\Requests\Admin\Visit\VisitUpdateRequest;
 use App\Models\Unit;

@@ -36,7 +36,7 @@
                             @error('zip_code')
                                 <div class="alert alert-danger mt-2">{{ $message }}</div>
                             @enderror
-                            <span class="badge border-info border-1 text-info">Obs: Ao preencher o CPF, os demais campos
+                            <span class="badge border-info border-1 text-info">Obs: Ao preencher o CEP, os demais campos
                                 serão
                                 preenchidos automaticamente, exceto o número.</span>
                         </div>
