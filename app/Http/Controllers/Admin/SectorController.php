@@ -35,14 +35,14 @@ class SectorController extends Controller
             Sector::create([
                 'name' => $request->get('name'),
                 'unit_id' => $request->get('unit_id'),
-                'user_id' => $request->get('user_ids[]'),
+                'user_id' => $request->get('user_id'),
             ]);
 
             notify()->success('Setor criado com sucesso!', 'Informação!');
 
             DB::commit();
 
-            
+
             return to_route('admin.sectors.index');
 
         } catch (Exception $e) {

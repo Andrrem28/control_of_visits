@@ -31,10 +31,19 @@
                         </div>
                         <div class="col-md-6">
                             <label for="inputText" class="col-form-label">Funcionários deste setor</label>
-                            <select class="form-select" aria-label="Default select example" name="role_id" value="{{ old('role_id') }}">
+                            <select class="form-select" aria-label="Default select example" name="unit_id" value="{{ old('unit_id') }}">
                                 <option selected>Selecione...</option>
-                                @foreach ($roles as $role)
-                                    <option value="{{ $role->id }}">{{ $role->name }}</option>
+                                @foreach ($units as $units)
+                                    <option value="{{ $units->id }}">{{ $units->name }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="inputText" class="col-form-label">Funcionários deste setor</label>
+                            <select class="form-select" aria-label="Default select example" name="user_id" value="{{ old('user_id') }}">
+                                <option selected>Selecione...</option>
+                                @foreach ($users as $user)
+                                    <option value="{{ $user->id }}">{{ $user->name }}</option>
                                 @endforeach
                             </select>
                         </div>

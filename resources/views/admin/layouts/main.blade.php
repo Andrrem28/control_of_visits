@@ -114,43 +114,36 @@
         <ul class="sidebar-nav" id="sidebar-nav">
 
             <li class="nav-heading">Opções</li>
-            @can('manage_all')
-            <li class="nav-item">
-                <a class="nav-link " href="{{ route('admin.dashboard') }}">
-                    <i class="bi bi-grid"></i>
-                    <span>Dashboard</span>
-                </a>
-            </li><!-- End Dashboard Nav -->
-            @endcan
-            @can('manage_all')
+
+                <li class="nav-item">
+                    <a class="nav-link " href="{{ route('admin.dashboard') }}">
+                        <i class="bi bi-grid"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li><!-- End Dashboard Nav -->
+          
+
                 <li class="nav-item">
                     <a class="nav-link collapsed" href="{{ route('admin.users.index') }}">
                         <i class="fa fa-users"></i><span>Funcionários</span></i>
                     </a>
                 </li><!-- End Components Nav -->
 
-            @endcan
-            @can('manage_all')
                 <li class="nav-item">
                     <a class="nav-link collapsed" href="{{ route('admin.institutions.index') }}">
                         <i class="fa fa-building"></i><span>Instituições</span></i>
                     </a>
                 </li><!-- End Forms Nav -->
-            @endcan
-            @can('manage_all')
                 <li class="nav-item">
                     <a class="nav-link collapsed" href="{{ route('admin.units.index') }}">
                         <i class="fa fa-house"></i><span>Unidades</span></i>
                     </a>
                 </li><!-- End Tables Nav -->
-            @endcan
-            @can('manage_all')
                 <li class="nav-item">
                     <a class="nav-link collapsed" href="{{ route('admin.sectors.index') }}">
                         <i class="fa fa-door-open"></i><span>Setores</span></i>
                     </a>
                 </li><!-- End Charts Nav -->
-            @endcan
             <li class="nav-item">
                 <a class="nav-link collapsed" href="{{ route('admin.verification') }}">
                     <i class="fa fa-eye"></i><span>Visitas</span></i>

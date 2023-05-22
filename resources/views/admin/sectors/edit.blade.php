@@ -31,20 +31,20 @@
                             @enderror
                         </div>
                         <div class="col-md-6">
-                            <label for="inputText" class="col-form-label">Funcionários deste setor</label>
-                            <select class="form-select" aria-label="Default select example" name="user_id">
-                                <option selected>Selecione...</option>
-                                @foreach ($users as $user)
-                                    <option value="{{ $user->id }}">{{ $user->name }}</option>
-                                @endforeach
-                            </select>
-                        </div>
-                        <div class="col-md-6">
                             <label for="inputText" class="col-form-label">Instituição pertencente</label>
                             <select class="form-select" aria-label="Default select example" name="unit_id">
                                 <option selected>Selecione...</option>
                                 @foreach ($units as $unit)
                                     <option value="{{ $unit->id }}">{{ $unit->name }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="inputText" class="col-form-label">Funcionários deste setor</label>
+                            <select class="form-select" aria-label="Default select example" name="user_id">
+                                <option selected>Selecione...</option>
+                                @foreach ($users as $user)
+                                    <option value="{{ $user->id }}">{{ $user->name }}</option>
                                 @endforeach
                             </select>
                         </div>
