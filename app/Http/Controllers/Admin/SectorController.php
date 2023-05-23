@@ -96,11 +96,13 @@ class SectorController extends Controller
 
             DB::commit();
 
+            notify()->success('Setor deletado com sucesso!', 'Informação!');
+
             return to_route('admin.sectors.index');
         } catch (Exception $e) {
             DB::rollBack();
 
-            return to_route('admin.sectors.index');
+            return to_route('admin.sectors.index', [$sectorId]);
         }
     }
 }

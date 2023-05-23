@@ -41,7 +41,7 @@ class UserController extends Controller
 
             $user->assignRole($request->get('role_id'));
 
-            notify()->success('Usuário criado com sucesso!', 'Informação!');
+            notify()->success('Usuário(a) criado com sucesso!', 'Informação!');
 
             DB::commit();
 
@@ -76,7 +76,7 @@ class UserController extends Controller
 
             $user->assignRole($request->get('role_id'));
 
-            notify()->success('Usuário atualizado com sucesso!', 'Informação!');
+            notify()->success('Usuário(a) criado com sucesso!', 'Informação!');
 
             DB::commit();
 
@@ -94,7 +94,7 @@ class UserController extends Controller
             $user = User::findOrFail($userId);
             $user->delete();
 
-            notify()->success('Usuário excluído com sucesso!', 'Informação!');
+            notify()->success('Usuário(a) criado com sucesso!', 'Informação!');
 
             DB::commit();
 
@@ -102,7 +102,7 @@ class UserController extends Controller
         } catch (Exception $e) {
             DB::rollBack();
 
-            return to_route('admin.users.edit', [$userId]);
+            return to_route('admin.users.index', [$userId]);
         }
     }
 

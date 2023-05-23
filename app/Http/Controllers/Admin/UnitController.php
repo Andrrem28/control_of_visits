@@ -103,12 +103,14 @@ class UnitController extends Controller
 
             DB::commit();
 
+            notify()->success('Unidade deletada com sucesso!', 'Informação!');
+
             return to_route('admin.units.index');
 
         } catch (Exception $e) {
             DB::rollBack();
 
-            return to_route('admin.units.index', $unitId);
+            return to_route('admin.units.index', [$unitId]);
         }
     }
 }

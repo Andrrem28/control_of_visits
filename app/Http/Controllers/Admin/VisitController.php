@@ -111,9 +111,9 @@ class VisitController extends Controller
             $visit = Visit::findOrFail($visitId);
             $visit->delete();
 
-            notify()->success('Visitante deletedo(a) com sucesso.', 'Informação!');
-
             DB::commit();
+
+            notify()->success('Visitante deletedo(a) com sucesso.', 'Informação!');
 
             return to_route('admin.visits.index');
         } catch (Exception $e) {

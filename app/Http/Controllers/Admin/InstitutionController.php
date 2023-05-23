@@ -99,12 +99,14 @@ class InstitutionController extends Controller
 
             DB::commit();
 
+            notify()->success('Instituição deletada com sucesso!', 'Informação!');
+
             return to_route('admin.institutions.index');
 
         } catch (Exception $e) {
             DB::rollBack();
 
-            return to_route('admin.institutions.index', $institutionId);
+            return to_route('admin.institutions.index', [$institutionId]);
         }
     }
 }

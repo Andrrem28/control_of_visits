@@ -36,34 +36,17 @@
                         <td>{{ $user->email }}</td>
                         <td>{{ $user->roles()->first()->description }}</td>
                         <td class="">
-                            <a href="{{ route('admin.users.edit', $user->id) }}" class="btn btn-primary btn-sm"> <i class="fa fa-pen"></i> </a>
-                            <!-- Button trigger modal -->
-                            <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#basicModal">
-                               <i class="fa fa-trash"></i>
-                            </button>
+                            <div class="d-flex">
+                                <a href="{{ route('admin.users.edit', $user->id) }}" class="btn btn-primary btn-sm mr-2"> <i class="fa fa-pen"></i> </a>
+                                <!-- Button trigger modal -->
+                                <form action="{{ route('admin.users.destroy', $user->id) }}" method="post">
+                                    @csrf
+                                    @method('delete')
+                                    <button type="submit" class="btn btn-danger btn-sm" style="margin-left: 3px"> <i class="fa fa-trash"></i> </button>
+                                </form>
+                            </div>
                         </td>
                     </tr>
-                    <div class="modal fade" id="basicModal" tabindex="-1">
-                        <div class="modal-dialog">
-                          <div class="modal-content">
-                            <div class="modal-header">
-                              <h5 class="modal-title">Tem certeza?</h5>
-                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                            </div>
-                            <div class="modal-body">
-                                <p>Deseja deletar este Usuário?</p>
-                            </div>
-                            <div class="modal-footer">
-                              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"> <i class="fa fa-times"></i> Não</button>
-                              <form action="{{ route('admin.users.destroy', $user->id) }}" method="post">
-                                @csrf
-                                @method('delete')
-                                <button type="submit" class="btn btn-success"> <i class="fa fa-check"></i> Sim</button>
-                              </form>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
                 @endforeach
               </tbody>
             </table>

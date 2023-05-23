@@ -45,4 +45,9 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function sectors()
+    {
+        return $this->hasMany(Sector::class);
+    }
 }
