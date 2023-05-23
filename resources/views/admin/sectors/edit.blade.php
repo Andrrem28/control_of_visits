@@ -31,7 +31,7 @@
                             @enderror
                         </div>
                         <div class="col-md-6">
-                            <label for="inputText" class="col-form-label">Instituição pertencente</label>
+                            <label for="inputText" class="col-form-label">Unidade relacionada</label>
                             <select class="form-select" aria-label="Default select example" name="unit_id">
                                 <option selected>Selecione...</option>
                                 @foreach ($units as $unit)
@@ -40,7 +40,7 @@
                             </select>
                         </div>
                         <div class="col-md-6">
-                            <label for="inputText" class="col-form-label">Funcionários deste setor</label>
+                            <label for="inputText" class="col-form-label">Funcionário deste setor</label>
                             <select class="form-select" aria-label="Default select example" name="user_id">
                                 <option selected>Selecione...</option>
                                 @foreach ($users as $user)
