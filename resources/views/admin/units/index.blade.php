@@ -43,7 +43,7 @@
                                         <td>{{ $unit->city }}</td>
                                         <td>{{ $unit->state }}</td>
                                         <td>{{ $unit->zip_code }}</td>
-                                        <td>{{ $unit->institution->name }}</td>
+                                        <td>{{ $unit->institution->name ?? 'Vincular Instituição'}}</td>
                                         <td class="">
                                             <a href="{{ route('admin.units.edit', $unit->id) }}"
                                                 class="btn btn-primary btn-sm"> <i class="fa fa-pen"></i> </a>

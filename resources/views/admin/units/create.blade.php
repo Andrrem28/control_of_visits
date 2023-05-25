@@ -83,11 +83,18 @@
                         <div class="col-md-6">
                             <label for="inputText" class="col-form-label">Instituição pertencente</label>
                             <select class="form-select" aria-label="Default select example" name="institution_id">
-                                <option selected>Selecione...</option>
+                                <option value="" selected>Selecione...</option>
                                 @foreach ($institutions as $institution)
                                     <option value="{{ $institution->id }}">{{ $institution->name }}</option>
                                 @endforeach
                             </select>
+                            @error('institution_id')
+                                <div class="alert alert-danger mt-2">
+                                    <span class="badge border-danger border-1 text-danger">Obs: Obrigatório selecionar uma
+                                        Insituição.</span>
+
+                                </div>
+                            @enderror
                         </div>
                         <div class="col-sm-2 py-2">
                             <a href="{{ route('admin.units.index') }}" class="btn btn-secondary btn-sm"> <i

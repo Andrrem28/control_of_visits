@@ -114,36 +114,45 @@
         <ul class="sidebar-nav" id="sidebar-nav">
 
             <li class="nav-heading">Opções</li>
-
-                <li class="nav-item">
-                    <a class="nav-link collapsed"  href="{{ route('admin.dashboard') }}">
+            @if (auth()->user()->can('manage_all'))
+                <li class="nav-item" >
+                    <a class="nav-link collapsed" href="{{ route('admin.dashboard') }}">
                         <i class="bi bi-grid"></i>
                         <span>Dashboard</span>
                     </a>
                 </li><!-- End Dashboard Nav -->
-
-
+            @endif
+            @if (auth()->user()->can('manage_all'))
                 <li class="nav-item">
                     <a class="nav-link collapsed" href="{{ route('admin.users.index') }}">
                         <i class="fa fa-users"></i><span>Funcionários</span></i>
                     </a>
                 </li><!-- End Components Nav -->
+            @endif
 
+            @if (auth()->user()->can('manage_all'))
                 <li class="nav-item">
                     <a class="nav-link collapsed" href="{{ route('admin.institutions.index') }}">
                         <i class="fa fa-building"></i><span>Instituições</span></i>
                     </a>
-                </li><!-- End Forms Nav -->
+                </li>
+            @endif
+            <!-- End Forms Nav -->
+            @if (auth()->user()->can('manage_all'))
                 <li class="nav-item">
                     <a class="nav-link collapsed" href="{{ route('admin.units.index') }}">
                         <i class="fa fa-house"></i><span>Unidades</span></i>
                     </a>
                 </li><!-- End Tables Nav -->
+            @endif
+            @if (auth()->user()->can('manage_all'))
                 <li class="nav-item">
                     <a class="nav-link collapsed" href="{{ route('admin.sectors.index') }}">
                         <i class="fa fa-door-open"></i><span>Setores</span></i>
                     </a>
-                </li><!-- End Charts Nav -->
+                </li>
+            @endif
+            <!-- End Charts Nav -->
             <li class="nav-item">
                 <a class="nav-link collapsed" href="{{ route('admin.verification') }}">
                     <i class="fa fa-eye"></i><span>Visitas</span></i>
@@ -257,28 +266,30 @@
     <script>
         var video = document.querySelector('video');
 
-navigator.mediaDevices.getUserMedia({video:true})
-.then(stream => {
-    video.srcObject = stream;
-    video.play();
-})
-.catch(error => {
-    console.log(error);
-})
+        navigator.mediaDevices.getUserMedia({
+                video: true
+            })
+            .then(stream => {
+                video.srcObject = stream;
+                video.play();
+            })
+            .catch(error => {
+                console.log(error);
+            })
 
-document.querySelector('#capture').addEventListener('click', () => {
-    var canvas = document.querySelector('canvas');
-        canvas.height = video.videoHeight;
-        canvas.width = video.videoWidth;
-    var context = canvas.getContext('2d');
-        context.drawImage(video, 0, 0);
-    var link = document.createElement('a');
-        link.download = 'photo-visitor.png';
-        link.href = canvas.toDataURL();
-        link.textContent = 'Salvar';
+        document.querySelector('#capture').addEventListener('click', () => {
+            var canvas = document.querySelector('canvas');
+            canvas.height = video.videoHeight;
+            canvas.width = video.videoWidth;
+            var context = canvas.getContext('2d');
+            context.drawImage(video, 0, 0);
+            var link = document.createElement('a');
+            link.download = 'photo-visitor.png';
+            link.href = canvas.toDataURL();
+            link.textContent = 'Salvar';
 
-        document.body.appendChild(link);
-});
+            document.body.appendChild(link);
+        });
     </script>
     <!-- Template Main JS File -->
     <script src="{{ asset('NiceAdmin/assets/js/main.js') }}"></script>

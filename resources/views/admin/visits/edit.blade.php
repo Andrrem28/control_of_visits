@@ -78,6 +78,9 @@
                                     <option value="{{ $unit->id }}">{{ $unit->name }}</option>
                                 @endforeach
                             </select>
+                            @error('general_record')
+                                <div class="alert alert-danger mt-2">{{ $message }}</div>
+                            @enderror
                         </div>
 
                         <div class="col-md-6">
@@ -95,6 +98,9 @@
                                 <option value="Visitado">Visitado</option>
                                 <option value="Agendado">Agendado</option>
                             </select>
+                            @error('general_record')
+                                <div class="alert alert-danger mt-2">{{ $message }}</div>
+                            @enderror
                         </div>
                         <div class="col-sm-2 py-2">
                             <a href="{{ route('admin.visits.index') }}" class="btn btn-secondary btn-sm"> <i

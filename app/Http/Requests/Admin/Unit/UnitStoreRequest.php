@@ -29,7 +29,7 @@ class UnitStoreRequest extends FormRequest
             'building_number' => 'required',
             'state' => 'required',
             'zip_code' => 'required',
-            'institution_id' => 'required|max:255'
+            'institution_id' => 'required'
         ];
     }
 }
